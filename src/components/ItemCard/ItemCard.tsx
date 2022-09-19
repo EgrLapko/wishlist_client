@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { useMutation } from "@apollo/client";
 import { GrTrash } from "react-icons/gr";
 import { AiOutlineCheck, AiOutlineEdit } from "react-icons/ai";
@@ -50,7 +51,7 @@ const ItemCard: React.FC<ItemCardProps> = ({ item, onEdit }) => {
   return (
     <div className="item-card">
       <div className="image-wrapper">
-        <img src={image} alt={title} />
+        <Image src={image} alt={title} layout="fill" objectFit="cover"/>
         <button
           className="button button-primary edit-button button-rounded"
           onClick={onEdit}
