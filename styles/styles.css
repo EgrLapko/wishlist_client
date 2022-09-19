@@ -1,0 +1,216 @@
+.items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin: auto;
+}
+.items .button-full {
+  margin-top: 48px;
+  width: 100%;
+  padding: 24px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.05);
+  border: 1px dashed rgba(0, 0, 0, 0.1);
+  font-size: 24px;
+  border-radius: 32px;
+}
+.items .button-full:hover {
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.09);
+}
+.items .items-wrapper {
+  width: 100%;
+  border: 1px dotted rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.05);
+  border-radius: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px;
+  margin: 32px 0;
+}
+
+.items-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin-top: 32px;
+}
+.items-container .item-card {
+  width: 350px;
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: white;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: 0.3s;
+  margin: 16px;
+  height: 100%;
+}
+.items-container .item-card .image-wrapper {
+  position: relative;
+}
+.items-container .item-card .image-wrapper img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+.items-container .item-card:hover {
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
+}
+.items-container .item-card:hover .edit-button {
+  opacity: 1;
+}
+.items-container .item-card:hover .delete-button {
+  opacity: 1;
+}
+.items-container .item-card:hover .done-button {
+  opacity: 1;
+}
+.items-container .item-card .edit-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 10;
+  opacity: 0;
+  transition: 0.3s;
+}
+.items-container .item-card .delete-button {
+  position: absolute;
+  top: 8px;
+  right: 56px;
+  z-index: 10;
+  opacity: 0;
+  transition: 0.3s;
+}
+.items-container .item-card .done-button {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 10;
+  opacity: 0;
+  transition: 0.3s;
+}
+.items-container .item-card h4 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+.items-container .item-card p {
+  text-align: center;
+}
+.items-container .item-card .item-card-main-content {
+  position: relative;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-content: space-between;
+}
+.items-container .item-card .item-card-main-content .item-card-title-text {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+.items-container .item-card .item-card-main-content .item-card-description-text {
+  font-weight: 400;
+  font-size: 12px;
+}
+.items-container .item-card .item-card-main-content .item-card-content-container {
+  margin: 4px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+}
+.items-container .item-card .item-card-main-content .item-card-content-container span {
+  font-weight: 600;
+}
+.items-container .item-card .item-card-main-content .button-link {
+  margin-top: 16px;
+  width: 100%;
+}
+
+.items-form-wrapper {
+  margin: 32px 0;
+}
+.items-form-wrapper .items-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.items-form-wrapper .items-form-container .items-form-content {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.items-form-wrapper .items-form-container .items-form-content .form-label {
+  margin: 0 0 0 8px;
+  font-size: 14px;
+}
+.items-form-wrapper .items-form-container .items-form-content input {
+  margin: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid gray;
+  font-size: 18px;
+  box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.1);
+  margin-top: 4px;
+}
+
+.button {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 8px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  margin: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.button.button-active {
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0);
+  background-color: tomato;
+  color: white;
+}
+.button:hover {
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.button-danger {
+  background-color: tomato;
+  color: white;
+}
+
+.button-primary {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.button-success {
+  background-color: forestgreen;
+  color: white;
+}
+
+.button-rounded {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=styles.css.map */

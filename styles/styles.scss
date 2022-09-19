@@ -1,0 +1,212 @@
+@mixin flexbox() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin: auto;
+  .button-full {
+    margin-top: 48px;
+    width: 100%;
+    padding: 24px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.05);
+    border: 1px dashed rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+    border-radius: 32px;
+    &:hover {
+      box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.09);
+    }
+  }
+  .items-wrapper {
+    width: 100%;
+    border: 1px dotted rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.05);
+    border-radius: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px;
+    margin: 32px 0;
+  }
+}
+
+.items-container {
+  @include flexbox();
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin-top: 32px;
+
+  .item-card {
+    width: 350px;
+    border-radius: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: white;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: 0.3s;
+    margin: 16px;
+    height: 100%;
+    .image-wrapper {
+      position: relative;
+      img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+    }
+    &:hover {
+      box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    &:hover .edit-button {
+      opacity: 1;
+    }
+    &:hover .delete-button {
+      opacity: 1;
+    }
+    &:hover .done-button {
+      opacity: 1;
+    }
+    .edit-button {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      z-index: 10;
+      opacity: 0;
+      transition: 0.3s;
+    }
+    .delete-button {
+      position: absolute;
+      top: 8px;
+      right: 56px;
+      z-index: 10;
+      opacity: 0;
+      transition: 0.3s;
+    }
+    .done-button {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      z-index: 10;
+      opacity: 0;
+      transition: 0.3s;
+    }
+    h4 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 400;
+      text-align: center;
+    }
+    p {
+      text-align: center;
+    }
+    .item-card-main-content {
+      position: relative;
+      padding: 16px;
+      @include flexbox();
+      flex-direction: column;
+      align-content: space-between;
+      .item-card-title-text {
+        text-transform: capitalize;
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 4px;
+      }
+      .item-card-description-text {
+        font-weight: 400;
+        font-size: 12px;
+      }
+
+      .item-card-content-container {
+        margin: 4px;
+        width: 100%;
+        @include flexbox();
+        justify-content: space-around;
+        & span {
+          font-weight: 600;
+        }
+      }
+      .button-link {
+        margin-top: 16px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.items-form-wrapper {
+  margin: 32px 0;
+  .items-form-container {
+    @include flexbox();
+    flex-direction: column;
+    .items-form-content {
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      .form-label {
+        margin: 0 0 0 8px;
+        font-size: 14px;
+      }
+      input {
+        margin: 8px;
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid gray;
+        font-size: 18px;
+        box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.1);
+        margin-top: 4px;
+      }
+    }
+  }
+}
+
+.button {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 8px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  margin: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+  &.button-active {
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0);
+    background-color: tomato;
+    color: white;
+  }
+  &:hover {
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.button-danger {
+  background-color: tomato;
+  color: white;
+}
+
+.button-primary {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.button-success {
+  background-color: forestgreen;
+  color: white;
+}
+
+.button-rounded {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  @include flexbox();
+}
